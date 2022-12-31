@@ -13,23 +13,51 @@
         <h1 id="titulo">TIC TAC TOE</h1>
     </div>
     <div id="casillas" class="container-fluid">
-        <button class="reset" onclick="reset()">Reset</button>
-        <button class="JvJ" onclick="jvj()">JvJ</button>
-        <button class="JvC" onclick="jvc()">JvC</button>
-        <button class="CvJ" onclick="cvj()">CvJ</button>
-        <div id="turno" class="turno"></div>
-        <div id="ganador" class="turno"></div>
         <div class="recuadro">
-            <button id="1" class="casilla1" type="button" onclick="buttonpulsado(1)"></button>
-            <button id="2" class="casilla2" type="button" onclick="buttonpulsado(2)"></button>
-            <button id="3" class="casilla3" type="button" onclick="buttonpulsado(3)"></button>
-            <button id="4" class="casilla4" type="button" onclick="buttonpulsado(4)"></button>
-            <button id="5" class="casilla5" type="button" onclick="buttonpulsado(5)"></button>
-            <button id="6" class="casilla6" type="button" onclick="buttonpulsado(6)"></button>
-            <button id="7" class="casilla7" type="button" onclick="buttonpulsado(7)"></button>
-            <button id="8" class="casilla8" type="button" onclick="buttonpulsado(8)"></button>
-            <button id="9" class="casilla9" type="button" onclick="buttonpulsado(9)"></button>
+            <button id="1" class="casilla1" type="button" onclick="buttonpulsado(1)">
+                <img src="imagenes/white.png" width="50" height="50">
+            </button>
+            <button id="2" class="casilla2" type="button" onclick="buttonpulsado(2)">
+                <img src="imagenes/white.png" width="50" height="50">
+            </button>
+            <button id="3" class="casilla3" type="button" onclick="buttonpulsado(3)">
+                <img src="imagenes/white.png" width="50" height="50">
+            </button>
+            <button id="4" class="casilla4" type="button" onclick="buttonpulsado(4)">
+                <img src="imagenes/white.png" width="50" height="50">
+            </button>
+            <button id="5" class="casilla5" type="button" onclick="buttonpulsado(5)">
+                <img src="imagenes/white.png" width="50" height="50">
+            </button>
+            <button id="6" class="casilla6" type="button" onclick="buttonpulsado(6)">
+                <img src="imagenes/white.png" width="50" height="50">
+            </button>
+            <button id="7" class="casilla7" type="button" onclick="buttonpulsado(7)">
+                <img src="imagenes/white.png" width="50" height="50">
+            </button>
+            <button id="8" class="casilla8" type="button" onclick="buttonpulsado(8)">
+                <img src="imagenes/white.png" width="50" height="50">
+            </button>
+            <button id="9" class="casilla9" type="button" onclick="buttonpulsado(9)">
+                <img src="imagenes/white.png" width="50" height="50">
+            </button>
         </div>
+        <div class="row botones">
+            <div class="col">
+                <button class="reset" onclick="reset()">Reset</button>
+                <button class="JvJ" onclick="jvj()">JvJ</button>
+                <button class="JvC" onclick="jvc()">JvC</button>
+                <button class="CvJ" onclick="cvj()">CvJ</button>
+            </div>
+            <div>
+                <div id="turno" class="turno"></div>
+            </div>
+        </div>
+        <div class="row div-ganador">
+            <div id="ganador" class="ganador"></div>
+        </div>
+        
+        
     </div>  
 
     
