@@ -1,0 +1,27 @@
+body{
+    background-color: rgb(63, 58, 58);
+}
+#casillas{
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+.recuadro{
+    display:grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 540px;
+    height: 300px;
+    margin-top: 5%;
+}
+#titulo{
+    color: #ffd607;
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+}  
+ input{
+    height: 180px;
+    width: 180px;
+} 
+
