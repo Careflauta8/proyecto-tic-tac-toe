@@ -1,44 +1,42 @@
+
 body{
-    background-color: rgb(63, 58, 58);
+	/* background-color: #272727;
+	height: 100%;
+	width: 100%; */
+	background-image: url(../img/wp8984777-tic-tac-toe-wallpapers.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position-x: center;
+	background-position-y: center;
+	background-attachment: fixed;
 }
-#casillas{
+#vista1{
+	height: 50px;
+	width: 500px;
+	border-radius: 8px;
+	display: grid;
+	justify-content:center;
+}
+#bienvenido{
+	margin-top: 5%;
+	border: 8px solid #ffd500;
+    border-radius: 20px;
+    height: auto;
+    background-color: #ffff;
+	box-shadow: 7px 7px 3px 3px #484848;
+}
+#tictactoe{
+	margin-top: 10%;
+	color: #ffd500;
     display: grid;
     justify-content: center;
-    text-align: center;
-    max-width: 180px;
-    max-height: 120px;
-    padding: 0px;
 }
-.recuadro{
-    display:grid;
-    justify-content: center;
-    grid-template-columns: 1fr 1fr 1fr;
-    width: 540px;
-    height: 300px;
-    margin-top: 5%;
+#boton{
+	margin-top: 5%;
 }
-#titulo{
-    color: #ffd607;
-    display: flex;
-    justify-content: center;
-    margin-top: auto;
-}  
-
-.turno {
-    color: #ffd607;
-    font-size: 40px;
-}
-
-.ganador {
-    font-size: 50px;
-    color: red;
-}
-
-.botones {
-    padding: 20px;
-    padding-bottom: 5px;
-}
-
-.div-ganador {
-    height: 100px;
+#start{
+	width: 90%;
+	height: 40%;
+	margin-top: 60%;
+	float:right;
 }

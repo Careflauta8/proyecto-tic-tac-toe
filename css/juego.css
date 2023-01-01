@@ -1,0 +1,100 @@
+body{
+    /* background-color: rgb(63, 58, 58); */
+
+    background-image: url(../img/wp8984777-tic-tac-toe-wallpapers.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    background-attachment: fixed;
+    
+}
+.row {
+	color: black;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	width: 10%;
+	padding: 5px;
+	margin-left: auto;
+}
+#usuario1 {
+	display: flex;
+	margin: auto;
+	border: 3px solid;
+	border-style: ridge;
+	padding: 8px;
+	background-color: #e2b205;
+}
+#usuario2 {
+	display: flex;
+	margin: auto;
+	border: 3px solid;
+	border-style: ridge;
+	padding: 8px;
+	background-color: #e2b205;
+}
+#turno{
+	display: flex;
+	width: 260px;
+	justify-content: center;
+	margin: auto;
+	border: 3px solid;
+	border-style: ridge;
+	padding: 8px;
+	background-color: #e2b205;
+	border-radius: 6px;
+	box-shadow: 7px 7px 3px 3px #484848; 
+} 
+#jugadores_juego {
+	display: flex;
+    margin: auto;
+    border: 3px ridge;
+    padding: 8px;
+    background-color: #e2b205;
+    justify-content: center;
+    text-align-last: center;
+    width: fit-content;
+	box-shadow: 7px 7px 3px 3px #484848;
+}
+#casillas{
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    max-width: 180px;
+    max-height: 120px;
+    padding: 0px;
+}
+.recuadro{
+    display:grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 540px;
+    height: 300px;
+    margin-top: 5%;
+}
+#titulo{
+    color: #ffd607;
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+}  
+
+.turno {
+    color: #ffd607;
+    font-size: 40px;
+}
+
+.ganador {
+    font-size: 50px;
+    color: red;
+}
+
+.botones {
+    padding: 20px;
+    padding-bottom: 5px;
+}
+
+.div-ganador {
+    height: 100px;
+}

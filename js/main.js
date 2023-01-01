@@ -1,3 +1,27 @@
+const ingresar = ()=>{
+    let jugador1 = document.querySelector('#usuario1').value
+    let jugador2 = document.querySelector('#usuario2').value
+    
+        sessionStorage.setItem('usuario1', jugador1)
+        sessionStorage.setItem('usuario2', jugador2)
+        
+		window.location = "../pages/juego.html"
+    
+}
+const mostrarNombres=()=>{
+    const caja1 = document.querySelector('#caja1')
+    const caja2 = document.querySelector('#caja2')
+	const turno = document.querySelector('#turno')
+    
+	let nombre1 = sessionStorage.getItem('usuario1')
+    let nombre2 = sessionStorage.getItem('usuario2')
+    
+    caja1.innerHTML = nombre1
+    caja2.innerHTML = nombre2
+}
+ mostrarNombres()
+
+
 
 let turno= 1;
 let jugadas = [];
@@ -30,17 +54,17 @@ buttonpulsado = (id) => {
 
 juegaHumano = (id) => {
 	if (turno <= 6 && jugadas.find(casilla => id == casilla.id ) === undefined) {
-    	document.querySelector(`.casilla${id}`).innerHTML = turno % 2 ? '<img src="imagenes/o.png" width="50" height="50">' : '<img src="imagenes/x.png" width="50" height="50">';
+    	document.querySelector(`.casilla${id}`).innerHTML = turno % 2 ? '<img src="../img/o.png" width="50" height="50">' : '<img src="../img/x.png" width="50" height="50">';
 		jugadas.push({ id: id, jugador: turno % 2 ? 1: 0 });
 		turno = turno + 1;
 	} else if (turno > 6 ) {
 		if (jugadas.length === 6) {
 			if (jugadas.find(casilla => id === casilla.id && casilla.jugador == turno % 2)) {
 				jugadas = jugadas.filter(casilla => casilla.id !== id);
-				document.querySelector(`.casilla${id}`).innerHTML= '<img src="imagenes/white.png" width="50" height="50">';
+				document.querySelector(`.casilla${id}`).innerHTML= '<img src="../img/white.png" width="50" height="50">';
 			}
 		} else {
-			document.querySelector(`.casilla${id}`).innerHTML = turno % 2 ? '<img src="imagenes/o.png" width="50" height="50">' : '<img src="imagenes/x.png" width="50" height="50">';
+			document.querySelector(`.casilla${id}`).innerHTML = turno % 2 ? '<img src="../img/o.png" width="50" height="50">' : '<img src="../img/x.png" width="50" height="50">';
 			jugadas.push({ id: id, jugador: turno % 2 ? 1: 0 });
 			turno = turno + 1;
 		}
@@ -111,7 +135,7 @@ reset = () => {
 	turno = 1;
 	jugadas = [];
 	for (let i = 1; i <= 9; i++) {
-		document.querySelector(`.casilla${i}`).innerHTML = '<img src="imagenes/white.png" width="50" height="50">'
+		document.querySelector(`.casilla${i}`).innerHTML = '<img src="../img/white.png" width="50" height="50">'
 	}
 
 	if ( modo === 'cvj') {

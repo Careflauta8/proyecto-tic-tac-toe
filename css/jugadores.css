@@ -1,0 +1,74 @@
+
+body{
+    /* background-color: #272727; */
+    background-image: url(../img/wp8984777-tic-tac-toe-wallpapers.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position-x: center;
+	background-position-y: center;
+	background-attachment: fixed;
+}
+.row{
+    color:black;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    width: 10%;
+    padding: 5px;
+    margin-left:auto;
+}
+#usuario1 {
+    display: flex;
+    margin: auto;
+    border: 3px solid;
+    border-style: ridge;
+    padding: 8px;
+    background-color: #e2b205;
+    box-shadow: 5px 5px 3px 3px #484848;
+}
+#usuario2 {
+    display: flex;
+    margin: auto;
+    border: 3px solid;
+    border-style: ridge;
+    padding: 8px;
+    background-color: #e2b205;
+    box-shadow: 5px 5px 3px 3px #484848;
+}
+#jugadores_nombres{
+    margin: auto;
+    border: 3px ridge;
+    padding: 8px; 
+    text-align-last: center;
+    width: fit-content; 
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    background-color: #e2b205;
+    box-shadow: 5px 5px 3px 3px #484848;
+}
+#start{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    margin-top: 3%;
+    width: 300px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+img{
+    width: 300px;
+}
+#vs{
+    display: flex;
+    margin: auto;
+    border: 3px solid;
+    border-style: ridge;
+    padding: 8px;
+    background-color: #e2b205;
+    box-shadow: 7px 7px 3px 3px #484848;
+}
+#cpu{
+    white-space: pre-line;
+}
