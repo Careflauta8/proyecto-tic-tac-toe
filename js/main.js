@@ -125,7 +125,7 @@ hayGanador = () => {
 		}
 		
 		if (result) {
-			
+			window.location= "../pages/ganador.html"
 			break;
 		}	
 	}
