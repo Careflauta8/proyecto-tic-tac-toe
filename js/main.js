@@ -25,7 +25,7 @@ const mostrarNombres=()=>{
 
 let turno= 1;
 let jugadas = [];
-let modo = 'jvj';
+let modo = 'jugadorvsjugador';
 let ultimaSelect;
 
 buttonpulsado = (id) => {
@@ -121,13 +121,16 @@ hayGanador = () => {
 		let jugada3 = jugadas.find(jugada => jugadaGanadora[2] == jugada.id);
 		if (jugada1 && jugada2 && jugada3) {
 			result = jugada1.jugador == jugada2.jugador && jugada3.jugador == jugada1.jugador
+			
 		}
 		
 		if (result) {
+			window.location= "../pages/ganador.html"
 			break;
 		}	
 	}
 	return result;
+	
 }
 
 
@@ -138,21 +141,21 @@ reset = () => {
 		document.querySelector(`.casilla${i}`).innerHTML = '<img src="../img/white.png" width="50" height="50">'
 	}
 
-	if ( modo === 'cvj') {
+	if ( modo === 'cpuvsjugador') {
 		juegaCPU();
 	}
 }
 
-jvj = () => {
-	modo = 'jvj';
+jugadorvsjugador = () => {
+	modo = 'jugadorvsjugador';
 }
 
-jvc = () => {
-	modo = 'jvc';
+jugadorvscpu = () => {
+	modo = 'jugadorvscpu';
 }
 
-cvj = () => {
-	modo = 'cvj';
+cpuvsjugador = () => {
+	modo = 'cpuvsjugador';
 }
 
 const ganador = [

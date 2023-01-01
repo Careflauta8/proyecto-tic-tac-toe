@@ -27,6 +27,8 @@
                         <div id="caja1"></div>
                     </div>
             </div>
+        </div>
+        <div id="jugadores_juego">
             <div class="container-fluid">
                 <label for="usuario2">JUGADOR 2</label>
                     <div class="recuadro">
@@ -68,9 +70,9 @@
         <div class="row botones">
             <div class="col">
                 <button class="reset" onclick="reset()">Reset</button>
-                <button class="JvJ" onclick="jvj()">JvJ</button>
-                <button class="JvC" onclick="jvc()">JvC</button>
-                <button class="CvJ" onclick="cvj()">CvJ</button>
+                <button class="JugadorvsJugador" onclick="jugadorvsjugador()">JvJ</button>
+                <button class="JugadorvsCpu" onclick="jugadorvscpu()">JvC</button>
+                <button class="CpuvJugador" onclick="cpuvsjugador()">CvJ</button>
             </div>
             <div>
                 <div id="turno" class="turno"></div>
@@ -79,8 +81,6 @@
         <div class="row div-ganador">
             <div id="ganador" class="ganador"></div>
         </div>
-        
-        
     </div>  
 
     

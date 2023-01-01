@@ -70,5 +70,12 @@ img{
     box-shadow: 7px 7px 3px 3px #484848;
 }
 #cpu{
+    display: flex;
+    justify-content: center;
+    border: 3px solid;
+    border-style: ridge;
+    background-color:#e2b205;
+    width: fit-content;
     white-space: pre-line;
+    box-shadow: 7px 7px 3px 3px #484848;
 }
