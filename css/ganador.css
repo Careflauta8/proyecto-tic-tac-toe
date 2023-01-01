@@ -1,0 +1,49 @@
+
+body{
+    /* background-color: #272727; */
+    background-image: url(../img/wp8984777-tic-tac-toe-wallpapers.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position-x: center;
+	background-position-y: center;
+	background-attachment: fixed;
+}
+.row {
+	color: black;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	width: 10%;
+	padding: 5px;
+	margin-left: auto;
+}
+h1{
+    color: #e2b205;
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+	font-size: 80px;
+	font-family: cursive;
+}
+.victoria{
+    display: flex;
+    justify-content: center;
+     margin: 5%; 
+	/* margin-top: 100px; */
+}
+#imagen{
+    border: 3px solid #e2b205;
+    border-radius: 20px;
+}
+#revancha{
+    display: flex;
+	width: 260px;
+	justify-content: center;
+	margin: auto;
+	border: 3px solid;
+	border-style: ridge;
+	padding: 8px;
+	background-color: #e2b205;
+	border-radius: 6px;
+	box-shadow: 7px 7px 3px 3px #484848; 
+}
