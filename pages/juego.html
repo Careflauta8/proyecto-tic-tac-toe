@@ -9,7 +9,7 @@
     <title>JUEGO TIC TAC TOE</title>
 </head>
 <body>
-    <div class="container-fluid">
+    <div id="volver" class="container-fluid">
         <div class="row">
             <a href="../pages/jugadores.html">
                 <button type="button" class="btn btn-outline-warning">ELEGIR JUGADORES</button>
@@ -23,7 +23,7 @@
         <div id="jugadores_juego">
             <div class="container-fluid">
                 <label for="usuario1">JUGADOR 1</label>
-                    <div class="recuadro">
+                    <div class="cuadrado">
                         <div id="caja1"></div>
                     </div>
             </div>
@@ -31,7 +31,7 @@
         <div id="jugadores_juego">
             <div class="container-fluid">
                 <label for="usuario2">JUGADOR 2</label>
-                    <div class="recuadro">
+                    <div class="cuadrado">
                         <div id="caja2"></div>
                     </div>
             </div>
@@ -70,9 +70,9 @@
         <div class="row botones">
             <div class="col">
                 <button class="reset" onclick="reset()">Reset</button>
-                <button class="JugadorvsJugador" onclick="jugadorvsjugador()">JvJ</button>
-                <button class="JugadorvsCpu" onclick="jugadorvscpu()">JvC</button>
-                <button class="CpuvJugador" onclick="cpuvsjugador()">CvJ</button>
+                <button class="JugadorvsJugador" onclick="jugadorvsjugador()">Jugador VS Jugador</button>
+                <button class="JugadorvsCpu" onclick="jugadorvscpu()">Jugador VS CPU</button>
+                <button class="CpuvJugador" onclick="cpuvsjugador()">CPU VS Jugador</button>
             </div>
             <div>
                 <div id="turno" class="turno"></div>

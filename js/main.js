@@ -30,15 +30,15 @@ let ultimaSelect;
 
 buttonpulsado = (id) => {
 	if (!hayGanador()) {
-		if (modo === 'jvj') {
+		if (modo === 'jugadorvsjugador') {
 			juegaHumano(id);
 		} else {
 			juegaHumano(id);
 			if (turno <= 6 ) {
 				juegaCPU();
 			} else if (turno > 6  && jugadas.length === 6 && 
-				((turno % 2 == 1 && modo === 'cvj' ) 
-				|| (turno % 2 == 0 && modo === 'jvc'))) 
+				((turno % 2 == 1 && modo === 'cpuvsjugador' ) 
+				|| (turno % 2 == 0 && modo === 'jugadorvscpu'))) 
 			{
 				juegaCPU();
 				juegaCPU();
@@ -125,7 +125,7 @@ hayGanador = () => {
 		}
 		
 		if (result) {
-			window.location= "../pages/ganador.html"
+			
 			break;
 		}	
 	}
