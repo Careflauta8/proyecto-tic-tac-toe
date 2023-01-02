@@ -46,4 +46,35 @@ h1{
 	background-color: #e2b205;
 	border-radius: 6px;
 	box-shadow: 7px 7px 3px 3px #484848; 
-} 
+}
+
+.ganador {
+	display: flex;
+	height: 60px;
+	justify-content: center;
+	margin: 20px;
+	border: 3px solid;
+	border-style: ridge;
+	background-color: #e2b205;
+	border-radius: 6px;
+	box-shadow: 7px 7px 3px 3px #484848; 
+    color: black;
+    font-size: 40px;
+}
+
+.titulo {
+	display: flex;
+	width: 260px;
+	justify-content: center;
+	margin: auto;
+	border: 3px solid;
+	border-style: ridge;
+	padding: 8px;
+	background-color: #e2b205;
+	border-radius: 6px;
+	box-shadow: 7px 7px 3px 3px #484848; 
+}
+
+.revancha-link {
+	text-decoration: none;
+}

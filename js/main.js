@@ -11,7 +11,7 @@ const ingresar = ()=>{
 const mostrarNombres=()=>{
     const caja1 = document.querySelector('#caja1')
     const caja2 = document.querySelector('#caja2')
-	const turno = document.querySelector('#turno')
+
     
 	let nombre1 = sessionStorage.getItem('usuario1')
     let nombre2 = sessionStorage.getItem('usuario2')
@@ -46,16 +46,25 @@ buttonpulsado = (id) => {
 		}
 	}
 	
-	if (hayGanador()) {
-		document.getElementById('ganador').innerHTML = turno % 2 ? 'Ganador X' : 'Ganador O';
+	let ganador = hayGanador();
+	if (ganador) {
+		document.getElementById('ganador').innerHTML = ganador;
 	}
-	document.getElementById('turno').innerHTML = turno % 2 ? 'Turno X' : 'Turno O';
+
+	if (modo === 'jugadorvsjugador') {
+		document.getElementById('turno').innerHTML = turno % 2 ? 'Turno X' : 'Turno O';
+	} else if (modo === 'jugadorvscpu') { 
+		document.getElementById('turno').innerHTML = 'Turno X';
+	} else if (modo === 'cpuvsjugador' ) { 
+		document.getElementById('turno').innerHTML = 'Turno O';
+	}
+	
 }
 
 juegaHumano = (id) => {
 	if (turno <= 6 && jugadas.find(casilla => id == casilla.id ) === undefined) {
-    	document.querySelector(`.casilla${id}`).innerHTML = turno % 2 ? '<img src="../img/o.png" width="50" height="50">' : '<img src="../img/x.png" width="50" height="50">';
-		jugadas.push({ id: id, jugador: turno % 2 ? 1: 0 });
+    	document.querySelector(`.casilla${id}`).innerHTML = turno % 2 ? '<img src="../img/x.png" width="50" height="50">' : '<img src="../img/o.png" width="50" height="50">';
+		jugadas.push({ id: id, jugador: turno % 2  ? 1: 0 });
 		turno = turno + 1;
 	} else if (turno > 6 ) {
 		if (jugadas.length === 6) {
@@ -64,7 +73,7 @@ juegaHumano = (id) => {
 				document.querySelector(`.casilla${id}`).innerHTML= '<img src="../img/white.png" width="50" height="50">';
 			}
 		} else {
-			document.querySelector(`.casilla${id}`).innerHTML = turno % 2 ? '<img src="../img/o.png" width="50" height="50">' : '<img src="../img/x.png" width="50" height="50">';
+			document.querySelector(`.casilla${id}`).innerHTML = turno % 2 ? '<img src="../img/x.png" width="50" height="50">' : '<img src="../img/o.png" width="50" height="50">';
 			jugadas.push({ id: id, jugador: turno % 2 ? 1: 0 });
 			turno = turno + 1;
 		}
@@ -115,21 +124,23 @@ calcularPosibleJugadas = () => {
 
 hayGanador = () => {
 	let result = false;
+	let playerGanador;
 	for (let jugadaGanadora of ganador) {
 		let jugada1 = jugadas.find(jugada => jugadaGanadora[0] == jugada.id);
 		let jugada2 = jugadas.find(jugada => jugadaGanadora[1] == jugada.id);
 		let jugada3 = jugadas.find(jugada => jugadaGanadora[2] == jugada.id);
 		if (jugada1 && jugada2 && jugada3) {
 			result = jugada1.jugador == jugada2.jugador && jugada3.jugador == jugada1.jugador
-			
+			playerGanador = jugada1.jugador == 1 ? 'Ganador X' : 'Ganador O';
+			console.log('playerGanador: ', playerGanador);
 		}
 		
 		if (result) {
-			window.location= "../pages/ganador.html"
-			break;
+			window.location = `../pages/ganador.html?ganador=${jugada1.jugador}`;
+ 			break;
 		}	
 	}
-	return result;
+	return result ? playerGanador : false;
 	
 }
 
@@ -137,6 +148,9 @@ hayGanador = () => {
 reset = () => {
 	turno = 1;
 	jugadas = [];
+	document.getElementById('ganador').innerHTML = '';
+	document.getElementById('turno').innerHTML = '';
+
 	for (let i = 1; i <= 9; i++) {
 		document.querySelector(`.casilla${i}`).innerHTML = '<img src="../img/white.png" width="50" height="50">'
 	}
@@ -144,18 +158,50 @@ reset = () => {
 	if ( modo === 'cpuvsjugador') {
 		juegaCPU();
 	}
+
+	if (modo === 'jugadorvsjugador') {
+		document.getElementById('turno').innerHTML = 'Turno X';
+	} else if (modo === 'jugadorvscpu') { 
+		document.getElementById('turno').innerHTML = 'Turno X';
+	} else if (modo === 'cpuvsjugador' ) { 
+		document.getElementById('turno').innerHTML = 'Turno O';
+	}
 }
 
 jugadorvsjugador = () => {
 	modo = 'jugadorvsjugador';
+	document.querySelector('.JugadorvsJugador').style.backgroundColor = '#e2b205';
+	document.querySelector('.JugadorvsJugador').style.color = 'black';
+
+	document.querySelector('.JugadorvsCpu').style.backgroundColor = 'transparent';
+	document.querySelector('.JugadorvsCpu').style.color = '#ffc107';
+	document.querySelector('.CpuvsJugador').style.backgroundColor = 'transparent';
+	document.querySelector('.CpuvsJugador').style.color = '#ffc107';
+	reset();
 }
 
 jugadorvscpu = () => {
 	modo = 'jugadorvscpu';
+	document.querySelector('.JugadorvsCpu').style.backgroundColor = '#e2b205';
+	document.querySelector('.JugadorvsCpu').style.color = 'black';
+	
+	document.querySelector('.JugadorvsJugador').style.backgroundColor = 'transparent';
+	document.querySelector('.JugadorvsJugador').style.color = '#ffc107';
+	document.querySelector('.CpuvsJugador').style.backgroundColor = 'transparent';
+	document.querySelector('.CpuvsJugador').style.color = '#ffc107';
+	reset();
 }
 
 cpuvsjugador = () => {
 	modo = 'cpuvsjugador';
+	document.querySelector('.CpuvsJugador').style.backgroundColor = '#e2b205';
+	document.querySelector('.CpuvsJugador').style.color = 'black';
+	
+	document.querySelector('.JugadorvsJugador').style.backgroundColor = 'transparent';
+	document.querySelector('.JugadorvsJugador').style.color = '#ffc107';
+	document.querySelector('.JugadorvsCpu').style.backgroundColor = 'transparent';
+	document.querySelector('.JugadorvsCpu').style.color = '#ffc107';
+	reset();
 }
 
 const ganador = [

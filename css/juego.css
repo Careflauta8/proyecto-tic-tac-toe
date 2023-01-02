@@ -60,6 +60,8 @@ body{
     display: flex;
     justify-content: center;
     margin-top: auto;
+    -webkit-text-stroke: 2px black;
+    font-size: 55px;
 }  
 .ganador {
     font-size: 50px;
@@ -70,7 +72,6 @@ body{
     padding: 20px;
     padding-bottom: 5px;
 }
-
 .div-ganador {
     height: 80px;
 }

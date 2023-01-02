@@ -68,14 +68,14 @@
             </button>
         </div>
         <div class="row botones">
-            <div class="col">
-                <button class="reset" onclick="reset()">Reset</button>
-                <button class="JugadorvsJugador" onclick="jugadorvsjugador()">Jugador VS Jugador</button>
-                <button class="JugadorvsCpu" onclick="jugadorvscpu()">Jugador VS CPU</button>
-                <button class="CpuvJugador" onclick="cpuvsjugador()">CPU VS Jugador</button>
+            <div id="botones_de_juego" class="col">
+                <button class="reset btn btn-outline-warning" onclick="reset()">Reset</button>
+                <button class="JugadorvsJugador btn btn-warning" onclick="jugadorvsjugador()">Jugador VS Jugador</button>
+                <button class="JugadorvsCpu btn btn-outline-warning" onclick="jugadorvscpu()">Jugador VS CPU</button>
+                <button class="CpuvsJugador btn btn-outline-warning" onclick="cpuvsjugador()">CPU VS Jugador</button>
             </div>
             <div>
-                <div id="turno" class="turno"></div>
+                <div id="turno" class="turno">Turno X</div>
             </div>
         </div>
         <div class="row div-ganador">
