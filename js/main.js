@@ -63,7 +63,7 @@ buttonpulsado = (id) => {
 
 juegaHumano = (id) => {
 	if (turno <= 6 && jugadas.find(casilla => id == casilla.id ) === undefined) {
-    	document.querySelector(`.casilla${id}`).innerHTML = turno % 2 ? '<img src="../img/x.png" width="50" height="50">' : '<img src="../img/o.png" width="50" height="50">';
+    	document.querySelector(`.casilla${id}`).innerHTML = turno % 2 ? '<img src="../img/x.png" width="50" height="50">' : '<img src="../img/O.png" width="50" height="50">';
 		jugadas.push({ id: id, jugador: turno % 2  ? 1: 0 });
 		turno = turno + 1;
 	} else if (turno > 6 ) {
@@ -74,7 +74,7 @@ juegaHumano = (id) => {
 				//la elimino visualmente//
 			}
 		} else {
-			document.querySelector(`.casilla${id}`).innerHTML = turno % 2 ? '<img src="../img/x.png" width="50" height="50">' : '<img src="../img/o.png" width="50" height="50">';
+			document.querySelector(`.casilla${id}`).innerHTML = turno % 2 ? '<img src="../img/x.png" width="50" height="50">' : '<img src="../img/O.png" width="50" height="50">';
 			jugadas.push({ id: id, jugador: turno % 2 ? 1: 0 }); //guardo el id y el turno//
 			turno = turno + 1; 
 		}
