@@ -68,30 +68,31 @@ juegaHumano = (id) => {
 		turno = turno + 1;
 	} else if (turno > 6 ) {
 		if (jugadas.length === 6) {
-			if (jugadas.find(casilla => id === casilla.id && casilla.jugador == turno % 2)) {
-				jugadas = jugadas.filter(casilla => casilla.id !== id);
+			if (jugadas.find(casilla => id === casilla.id && casilla.jugador == turno % 2)) { //que la jugada sea mia//
+				jugadas = jugadas.filter(casilla => casilla.id !== id); //elimino de la logica//
 				document.querySelector(`.casilla${id}`).innerHTML= '<img src="../img/white.png" width="50" height="50">';
+				//la elimino visualmente//
 			}
 		} else {
 			document.querySelector(`.casilla${id}`).innerHTML = turno % 2 ? '<img src="../img/x.png" width="50" height="50">' : '<img src="../img/o.png" width="50" height="50">';
-			jugadas.push({ id: id, jugador: turno % 2 ? 1: 0 });
-			turno = turno + 1;
+			jugadas.push({ id: id, jugador: turno % 2 ? 1: 0 }); //guardo el id y el turno//
+			turno = turno + 1; 
 		}
 	}
 }
 
 juegaCPU = () => {
-	let posiblesJugadas = calcularPosibleJugadas();
-	let id = posiblesJugadas[ Math.floor(Math.random() * posiblesJugadas.length)];
-	juegaHumano(id);
-	ultimaSelect = id;
+	let posiblesJugadas = calcularPosibleJugadas(); //da todas las posibles jugadas //
+	let id = posiblesJugadas[ Math.floor(Math.random() * posiblesJugadas.length)]; //da una jugada random//
+	juegaHumano(id); //la computadora juega igual que el humano//
+	ultimaSelect = id; //con esto guardamos la ultima jugada de la CPU//
 }
 
 calcularPosibleJugadas = () => {
-	let posibleJugadas = [];
+	let posibleJugadas = []; //es un array de las posibles jugadas de la CPU//
 
 	if (turno <= 6 ) {
-		if (jugadas.length > 0) {
+		if (jugadas.length > 0) {  //si ya se ha jugado al menos una vez//
 			[1,2,3,4,5,6,7,8,9].forEach(posi => {
 				let juga = jugadas.find(jugada => posi === jugada.id);
 				if (!juga) {
@@ -103,10 +104,10 @@ calcularPosibleJugadas = () => {
 		}
 		
 	} else {
-		if (jugadas.length === 6) {
-			jugadas.forEach(jugada => {
-				if (jugada.jugador === turno % 2) {
-					posibleJugadas.push(jugada.id);
+		if (jugadas.length === 6) { //tamaño array es exactamente igual a 6//
+			jugadas.forEach(jugada => { //recorro todo el array//
+				if (jugada.jugador === turno % 2) { //si la jugada es mia//
+					posibleJugadas.push(jugada.id); //la agrego como una posible jugada//
 				}
 			});
 		} else {
@@ -131,8 +132,7 @@ hayGanador = () => {
 		let jugada3 = jugadas.find(jugada => jugadaGanadora[2] == jugada.id);
 		if (jugada1 && jugada2 && jugada3) {
 			result = jugada1.jugador == jugada2.jugador && jugada3.jugador == jugada1.jugador
-			playerGanador = jugada1.jugador == 1 ? 'Ganador X' : 'Ganador O';
-			console.log('playerGanador: ', playerGanador);
+			playerGanador = jugada1.jugador ? 'Ganador X' : 'Ganador O';
 		}
 		
 		if (result) {
@@ -155,15 +155,10 @@ reset = () => {
 		document.querySelector(`.casilla${i}`).innerHTML = '<img src="../img/white.png" width="50" height="50">'
 	}
 
-	if ( modo === 'cpuvsjugador') {
+	if (modo === 'jugadorvsjugador' || modo === 'jugadorvscpu') {
+		document.getElementById('turno').innerHTML = 'Turno X';
+	} else if (modo === 'cpuvsjugador' ) {
 		juegaCPU();
-	}
-
-	if (modo === 'jugadorvsjugador') {
-		document.getElementById('turno').innerHTML = 'Turno X';
-	} else if (modo === 'jugadorvscpu') { 
-		document.getElementById('turno').innerHTML = 'Turno X';
-	} else if (modo === 'cpuvsjugador' ) { 
 		document.getElementById('turno').innerHTML = 'Turno O';
 	}
 }
